@@ -4,26 +4,26 @@
   gather_facts: yes
   tasks:
   - name: i want to install apache2 webserver on ubuntu ansible nodes
-    apt: 
-      name: {{"mywebpackonubuntu"}}
+    apt:
+      name: "{{mywebpackonubuntu}}"
       state: present
     when: ansible_os_family=="Debian"  
     
   - name: i want to start apache2 webserver
     service:
-      name: {{"mywebpackonubuntu"}}
+      name: "{{mywebpackonubuntu}}"
       state: started    
     when: ansible_os_family=="Debian"
 
 
   - name: i want to install webserver on RedHat
     yum: 
-      name: {{"mywebpackonredhat"}}
+      name: "{{mywebpackonredhat}}"
       state: present
     when: ansible_os_family=="RedHat"  
     
   - name: i want to start apache2 webserver
     service:
-      name: {{"mywebpackonredhat"}}
+      name: "{{mywebpackonredhat}}"
       state: started    
     when: ansible_os_family=="RedHat"
